@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
 
+//ref:
+  //https://www.youtube.com/watch?v=I1IH96LzDNc&t=49s
+  //https://www.youtube.com/watch?v=BeiRU10gzfI&t=2382s   //use this
+
+import React, {useEffect, useState} from 'react';
+import ListCourseApi from './ListCourseApi';
+import SuggestTag from './SuggestTag';
+
 function App() {
+
+  const name = "visitor";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <p>Greetings {name}!</p>
+        <p>Here are some courses we have available at our distinguished institution.</p>
+      </div>
+      <h2>Available Courses:</h2>
+      <ListCourseApi />    
+      <SuggestTag />  
     </div>
   );
 }
